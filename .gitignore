@@ -1,0 +1,15 @@
+.ipynb_checkpoints/
+__pycache__/
+data/basemaps/
+*.grib2
+*.grb2
+*.idx
+
+# Generated plots and local station downloads
+figures/
+data/look_eyrie/
+*.png
+*.pdf
+*.jpg
+*.jpeg
+*.svg

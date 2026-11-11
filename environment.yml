@@ -1,0 +1,13 @@
+name: canwell
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - numpy
+  - matplotlib
+  - pillow
+  - pyproj
+  - jupyterlab
+  - ipykernel
+  - nbclient
+  - wgrib2
