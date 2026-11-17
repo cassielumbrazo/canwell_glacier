@@ -8,8 +8,16 @@ data/basemaps/
 # Generated plots and local station downloads
 figures/
 data/look_eyrie/
+data/canwell_weather_station_data/
 *.png
 *.pdf
 *.jpg
 *.jpeg
 *.svg
+
+# Generated Canwell HRRR-AK dataset
+data/hrrrak_canwell_f567_*.nc
+data/.canwell-*/
+
+# Generated model forcing and evaluation data
+data/snowpack_forcing/

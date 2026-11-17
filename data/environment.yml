@@ -1,9 +1,12 @@
-name: canwell
+name: canwell_glacier
 channels:
   - conda-forge
 dependencies:
   - python>=3.10
   - numpy
+  - netcdf4
+  - xarray
+  - pandas
   - matplotlib
   - pillow
   - pyproj
