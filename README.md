@@ -113,3 +113,14 @@ value, with no lapse-rate adjustment.
 The Canwell logger has `DT_Avg` and `TCDT_Avg` distance-like readings, but the
 download does not document a calibrated snow-depth series or the snow-free
 sensor height needed to derive one.
+
+## Look Eyrie SNOWPACK comparisons
+
+- [Forcing comparison](notebooks/05_compare_look_eyrie_snowpack_forcing.ipynb)
+- [Simulated and observed snow depth](notebooks/06_compare_look_eyrie_snowpack_snow_depth.ipynb)
+
+Run these notebooks from the repository root or `notebooks/` with the
+`canwell_glacier` kernel. They read the lapse-adjusted forcing, station
+evaluation data, and simulation outputs from `python/models/run_snowpack/sites/lookeyrie`
+in the default checkout layout. Set `LOOK_EYRIE_SNOWPACK_SITE` to the Look Eyrie
+site directory if your model checkout is elsewhere.
