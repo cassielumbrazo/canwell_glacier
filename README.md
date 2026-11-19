@@ -10,7 +10,7 @@ Start with [`notebooks/01_canwell_sites_and_hrrr_grid.ipynb`](notebooks/01_canwe
 - One downloaded HRRR-AK 2 m air-temperature field in °C, with native 3 km cell edges and centres.
 
 The copied source text and download configuration are in [`data/canwell_readme.txt`](data/canwell_readme.txt).
-Generated maps are saved locally in `figures/` (ignored by Git). Notebook outputs are cleared before committing; rerun the notebook to view its maps.
+Generated maps are saved locally in `figures/` (ignored by Git). The notebooks include rendered outputs for viewing on GitHub.
 
 ## Run
 
