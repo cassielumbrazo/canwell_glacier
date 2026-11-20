@@ -1,0 +1,45 @@
+CANWELL HRRR-AK NETCDF: SNOWPACK FORCING GUIDE
+
+Companion file: hrrrak_canwell_f567_WY2020-WY2026.nc
+
+Use the grid cell nearest the site for the Canwell workflow. The
+two-dimensional latitude and longitude arrays give the cell centers.
+Extract one value per hour from that cell. Use time as the timestamp:
+it is the forecast valid time in UTC. Set the SMET time zone to 0 (UTC).
+
+NETCDF VARIABLE(S)    SMET FIELD   WHAT TO WRITE
+-------------------   ----------   -------------------------------------------
+temp                  TA           2 m air temperature in kelvin (K).
+rh                    RH           2 m relative humidity as a fraction.
+                                   Divide the NetCDF percent value by 100.
+wind                  VW           10 m wind speed in m/s. Already computed
+                                   from 10u and 10v.
+10u, 10v              DW           10 m wind direction in degrees clockwise
+                                   from true north, measured from the
+                                   direction the wind comes from. The two
+                                   components follow the HRRR grid axes.
+                                   Account for grid rotation using the crs
+                                   metadata, then wrap the result to [0, 360).
+swrad                 ISWR         Incoming shortwave radiation in W/m^2.
+                                   Set negative values to zero.
+lwrad                 ILWR         Incoming longwave radiation in W/m^2.
+precip_hourly         PSUM         Total precipitation during the one-hour
+                                   interval ending at the timestamp. The
+                                   NetCDF unit kg/m^2 is numerically equal
+                                   to mm of water equivalent. Copy it directly.
+pressure              P            Surface air pressure in pascals (Pa).
+
+SMET column order:
+timestamp TA RH VW DW ISWR ILWR PSUM P
+
+NOTES
+
+- Use precip_hourly for hourly PSUM. precip_rate is a rate, precip_total
+  accumulates from the forecast initialization, and snowfall_total is
+  snowfall depth. SNOWPACK partitions PSUM into rain and snow in the model
+  configuration. The Look Eyrie runs used a temperature threshold of 1.2 C.
+- orog is the grid-cell surface geopotential height in meters. Use it with
+  the site elevation if applying a lapse-rate correction to TA. Keep the
+  site elevation in the SMET header.
+- Check that the extracted timestamps are hourly and the required fields
+  are present. A missing precipitation value should be treated as missing.
